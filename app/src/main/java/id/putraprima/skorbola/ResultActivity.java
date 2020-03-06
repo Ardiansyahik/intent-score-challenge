@@ -3,6 +3,7 @@ package id.putraprima.skorbola;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import javax.xml.transform.Result;
 
@@ -22,7 +23,16 @@ public class ResultActivity extends AppCompatActivity {
         int awayResult = extras.getInt("awayTextScore");
         String homename = extras.getString("homename");
         String awayname = extras.getString("awayname");
-
-        
+        if (extras != null) {
+            result.setText(String.valueOf(homeResult)+"-"+String.valueOf(awayResult));
+            if (homeResult > awayResult){
+                winner.setText(homename + " memenangkan pertandingan");
+            } else if (homeResult < awayResult){
+                winner.setText(awayname+" menangkan pertandingan");
+            } else {
+                winner.setText(" pertandingan imbang");
+            }
+        }
     }
 }
+

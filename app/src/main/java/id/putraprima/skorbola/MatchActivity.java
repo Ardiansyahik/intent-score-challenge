@@ -106,7 +106,7 @@ public class MatchActivity extends AppCompatActivity {
     }
 
     public void next(View view) {
-        Intent intent = new Intent(this,ResultActivity.class);
+        Intent intent = new Intent(this, ResultActivity.class);
         intent.putExtra("homename", homename);
         intent.putExtra("awayname", awayname);
         intent.putExtra("homeTextScore",homescore);
